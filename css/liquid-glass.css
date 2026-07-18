@@ -43,14 +43,12 @@ nav,
   background: var(--lg-bg);
   -webkit-backdrop-filter: blur(var(--lg-blur)) saturate(var(--lg-sat));
   backdrop-filter: blur(var(--lg-blur)) saturate(var(--lg-sat));
-  border: 1px solid var(--lg-border);
   box-shadow: var(--lg-highlight), 0 0 0 1px var(--lg-edge), var(--lg-shadow);
 }
 
 /* ── Navbar: full-width glass bar ──────────────────────────────────────── */
 nav{
   background: var(--lg-bg);
-  border-bottom: 1px solid var(--lg-edge);
   box-shadow: inset 0 1px 0 rgba(255,255,255,.7);
 }
 nav.scrolled{

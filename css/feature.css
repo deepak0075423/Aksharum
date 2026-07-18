@@ -8,6 +8,11 @@
   --sh-md:0 8px 32px rgba(93,63,184,.12);
   --sh-lg:0 20px 56px rgba(93,63,184,.13);
   --wrap:1200px;--pad:52px;
+
+    --nav-bg-start: #FFFFFF;
+  --nav-bg-middle: #EDE9FE;
+  --nav-bg-end: #e2d9ff;
+  
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -1376,6 +1381,18 @@ html[data-theme="dark"] {
 
   color-scheme: dark;
 }
+
+
+
+[data-theme="dark"] {
+  /* Dark mode: transitions from dark background down into your hero section */
+  --nav-bg-start: #0F0E17;
+  --nav-bg-middle: #1B1834;
+  --nav-bg-end: #2a1d58;
+  
+  --nav-text-color: #F0F0F0;
+}
+
 
 html[data-theme="dark"] body {
   background: var(--bg);

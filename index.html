@@ -26,12 +26,14 @@
 </head>
 <body>
 
-<!-- ════════════════════════════════════════════════════════════════
-     HOME PAGE (index.html) — REPLACE your existing
-     <nav id="nav">...</nav> with THIS entire block.
-     Only the hamburger + overlay + drawer are new.
-     ════════════════════════════════════════════════════════════════ -->
-<nav id="nav">
+<!-- NAVIGATION -->
+
+<nav id="nav" style="background: linear-gradient(
+    180deg, 
+    var(--nav-bg-start) 0%, 
+    var(--nav-bg-middle) 55%, 
+    var(--nav-bg-end) 100%
+  );">
   <div class="nw">
     <a href="index.html" class="logo">
       <div class="lbox">
@@ -143,6 +145,9 @@
 </div>
   </aside>
 
+
+  <!-- ##################################################################################### -->
+
 <!-- ════════ HERO ════════ -->
 <section class="hero" id="hero">
   <div class="hero-glow1"></div>
@@ -150,12 +155,16 @@
 
   <!-- LEFT TEXT -->
   <div class="hero-left">
-    <h1 id="h-title">
-      Revolutionizing<br>Next-Generation<br>School <em>Management.</em>
+    <h1 id="h-title"> 
+      The Operating<br>System for <br>Modern <em>Schools.</em>
     </h1>
     <p class="hero-desc" id="h-desc">
-      Aksharum is a next-generation ERP platform that empowers schools with smarter academics, seamless communication, intelligent management, and connected digital experiences.
+      <!-- Manage academics, admissions, attendance, fees, communication, and administration from one intelligent platform. -->
+      <!-- Empower your school with smarter academics, seamless communication, intelligent management, and connected digital experiences. -->
+      
+      Every classroom connected. Every operation simplified.
     </p>
+   
     <div class="hero-btns" id="h-btns">
       <button class="btn-white" onclick="location.href='about.html'">
         Know More
@@ -163,9 +172,14 @@
       </button>
       <button class="btn-ghost" onclick="location.href='demo.html'">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-        Book Demo
+        See it in Action
       </button>
     </div>
+     <p class="hero-desc" id="h-desc" style="margin-top: 24px;">
+      
+      Admissions • Academics • Attendance • Fees • Communication • Analytics
+    </p>
+
   </div>
 
   <!-- RIGHT: blob + student + dashboard -->
@@ -257,12 +271,17 @@
               <div class="dsc-val">24</div><div class="dsc-lbl">Alerts</div>
             </div>
             <div class="dsc">
-              <div class="dsc-ico ico-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+              <div class="dsc-ico ico-orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
               <div class="dsc-val">8</div><div class="dsc-lbl">Events</div>
             </div>
             <div class="dsc">
-              <div class="dsc-ico ico-red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
-              <div class="dsc-val">12</div><div class="dsc-lbl">Subjects</div>
+<div class="dsc-ico ico-red">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+    <line x1="1" y1="10" x2="23" y2="10" />
+  </svg>
+</div>
+              <div class="dsc-val">Payroll</div><div class="dsc-lbl">Processed</div>
             </div>
             <div class="dsc">
               <div class="dsc-ico ico-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
@@ -290,8 +309,15 @@
 
         <!-- enroll chip -->
         <div class="enroll-chip">
-          <div class="chip-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="23" y1="11" x2="17" y2="11"/><line x1="20" y1="8" x2="20" y2="14"/></svg></div>
-          <div class="chip-txt"><strong>+23 Students</strong><span>Enrolled this week</span></div>
+          <div class="chip-ico">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4" />
+    <polyline points="7 10 12 15 17 10" />
+    <line x1="12" y1="15" x2="12" y2="3" />
+  </svg>
+</div>
+
+          <div class="chip-txt"><strong>Monthly Report Ready</strong><span>Download Now</span></div>
         </div>
 
       </div><!-- end dash wrapper -->
@@ -299,14 +325,23 @@
   </div><!-- end hero-right -->
 </section>
 
+
+<!-- ############################################################################################# -->
+
 <!-- ══ PROBLEM CARDS ══ -->
-<section class="prob-sec" id="problemSec">
+<section class="prob-sec" id="problemSec" style="background: linear-gradient(
+    360deg, 
+    var(--nav-bg-start) 0%, 
+    var(--nav-bg-middle) 55%, 
+    var(--nav-bg-end) 100%
+  );">
   <div class="prob-inner">
 
     <div class="prob-hd">
-      <div class="prob-eyebrow-lbl">The Problem We Solve</div>
-      <h2>Running a school is <em>harder<br>than it should be</em></h2>
-      <p>Three critical breakdowns drain schools every day — all caused by disconnected systems and zero visibility.</p>
+      <div class="prob-eyebrow-lbl" style="color: #e5e9ff;">Why Schools Struggle Today</div>
+      <h2>Schools Have  <em>Changed. <br>Software Hasn't.</em></h2>
+      <p>
+Disconnected tools, repetitive work, and poor communication slow schools down every day. </p>
     </div>
 
     <div class="prob-cards">
@@ -321,20 +356,23 @@
             <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
           </svg>
         </div>
-        <h3>Hours Lost to Manual Work</h3>
-        <p class="pcard-desc">Teachers and admins repeat the same paper-based rituals every day. Time that should go to students disappears into clerical tasks that a modern platform handles automatically.</p>
+        <h3>Administrative Overload</h3>
+        <p class="pcard-desc">
+Teachers spend hours on repetitive tasks that software should automate.
+        </p>
         <div class="pain-list">
           <div class="pain-row">
             <span class="pain-dot"></span>
-            Attendance registered by hand, every class, every day
+            Manual attendance tracking
+
           </div>
           <div class="pain-row">
             <span class="pain-dot"></span>
-            Salary slips typed, printed and hand-delivered monthly
-          </div>
+Repetitive timetable planning
+         </div>
           <div class="pain-row">
             <span class="pain-dot"></span>
-            Timetables rebuilt from scratch each term
+Payroll & administrative paperwork 
           </div>
         </div>
       </div>
@@ -348,21 +386,25 @@
             <path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
           </svg>
         </div>
-        <h3>Parents &amp; Students Left in the Dark</h3>
-        <p class="pcard-desc">When information doesn't flow, trust erodes. Parents have no window into attendance, results, or fees. Students wait days to know if they passed. Urgent notices arrive a week late — or not at all.</p>
+        <h3>Disconnected Communication</h3>
+        <p class="pcard-desc">Parents, teachers, and students miss important updates because communication is fragmented.</p>
         <div class="pain-list">
           <div class="pain-row">
             <span class="pain-dot"></span>
-            Results take 3–5 days to reach students post-exam
+            
+            No Real-time alert engine
+
+
           </div>
           <div class="pain-row">
             <span class="pain-dot"></span>
-            No real-time alerts for absences, events or fee dues
-          </div>
+No In-app chat & file sharing
+  </div>
           <div class="pain-row">
             <span class="pain-dot"></span>
-            Documents shared on WhatsApp with no version control
-          </div>
+No Unified student portfolio    
+
+</div>
         </div>
       </div>
 
@@ -375,20 +417,22 @@
             <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
           </svg>
         </div>
-        <h3>Five Tools, Zero Integration</h3>
-        <p class="pcard-desc">Schools juggle separate apps for fees, exams, results, communication and documents. Data re-entered between tools means data corrupted. Every handoff is a failure point, a privacy risk, and a time sink.</p>
+        <h3>One School. Five Different Systems.</h3>
+        <p class="pcard-desc">
+Critical information lives across spreadsheets, registers, and disconnected applications.
+        </p>
         <div class="pain-list">
           <div class="pain-row">
             <span class="pain-dot"></span>
-            Same student data re-entered into 4–5 separate systems
+            No real-time insights
           </div>
           <div class="pain-row">
             <span class="pain-dot"></span>
-            No single source of truth — every report contradicts
+            Limited operational visibility
           </div>
           <div class="pain-row">
             <span class="pain-dot"></span>
-            Data silos make school-wide decisions impossible
+Slow document retrieval
           </div>
         </div>
       </div>
@@ -397,8 +441,16 @@
   </div>
 </section>
 
+
+
+
+<!-- ######################################################################## -->
+
 <!-- ══ SOLUTION SECTION ══ -->
-<section class="sol-sec" id="solutionSec">
+
+
+
+<section class="sol-sec" id="solutionSec" >
   <div class="sol-noise"></div>
   <div class="sol-glow-tr"></div>
   <div class="sol-glow-bl"></div>
@@ -410,8 +462,8 @@
   <div class="sol-inner">
     <div class="sol-hd" id="solHd">
       <div class="sol-ey">Our Solution</div>
-      <h2>One platform. <em>Every answer.</em></h2>
-      <p>Aksharum connects every workflow into one seamless ecosystem — built for every role.</p>
+      <h2>One platform. <em>Every Workflow.</em></h2>
+      <p>Built to automate routine operations, and give every stakeholder a better experience.</p>
     </div>
 
     <div class="sol-stage">
@@ -421,30 +473,42 @@
         <div class="sc">
           <div class="sc-row">
             <div class="sc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
-            <span class="sc-title">Real-Time Attendance</span>
+            <span class="sc-title">Smart Admissions
+
+</span>
           </div>
-          <p class="sc-desc">Digital marking with live admin visibility — no registers, no delays, no missing data.</p>
-          <div class="sc-tag"><span class="sc-dot"></span>Instant sync</div>
+          <p class="sc-desc" style="margin-bottom: 0.3rem;">Turn applications into enrollments with a seamless digital admission journey.
+
+
+          </p>
+          <div class="sc-tag"><span class="sc-dot"></span>Paperless admissions</div>
         </div>
 
         <div class="sc">
           <div class="sc-row">
             <div class="sc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-            <span class="sc-title">Fees &amp; Salary</span>
+            <span class="sc-title">Finance &amp; Operations</span>
           </div>
-          <p class="sc-desc">Online payments, auto-receipts and payslips — defaulters flagged automatically.</p>
-          <div class="sc-tag"><span class="sc-dot"></span>Zero manual work</div>
+          <p class="sc-desc" style="margin-bottom: 0.3rem;">Automate fees, payroll, transport, inventory, and everyday administration.</p>
+          <div class="sc-tag"><span class="sc-dot"></span>Zero manual reconciliation</div>
         </div>
 
         <div class="sc">
           <div class="sc-row">
-            <div class="sc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-            <span class="sc-title">Document Sharing</span>
+            <div class="sc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+              </svg></div>
+            <span class="sc-title">
+              Connected Communication     
+            </span>
           </div>
-          <p class="sc-desc">Secure uploads with version control — shared to the right audience, every time.</p>
-          <div class="sc-tag"><span class="sc-dot"></span>Version controlled</div>
+          <p class="sc-desc" style="margin-bottom: 0.3rem;">One secure communication hub for parents, teachers, students, and administrators.
+          </p>
+          <div class="sc-tag"><span class="sc-dot"></span>Real-time collaboration</div>
         </div>
-      </div>
+        </div>
 
       <!-- CENTER IMAGE -->
       <div class="sol-center" id="solCenter">
@@ -460,28 +524,28 @@
         <div class="sc">
           <div class="sc-row">
             <div class="sc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-            <span class="sc-title">Instant Results</span>
+            <span class="sc-title">Student Lifecycle</span>
           </div>
-          <p class="sc-desc">Multi-level approval, one-click publish — students and parents notified the moment results are live.</p>
-          <div class="sc-tag"><span class="sc-dot"></span>Push notifications</div>
+          <p class="sc-desc" style="margin-bottom: 0.3rem;">Every student record, achievement, document, and interaction in one digital profile.</p>
+          <div class="sc-tag"><span class="sc-dot"></span>360° student profile</div>
         </div>
 
         <div class="sc">
           <div class="sc-row">
             <div class="sc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M22 22l-4.35-4.35"/></svg></div>
-            <span class="sc-title">Anti-Cheat Exams</span>
+            <span class="sc-title">Intelligent Decision Making</span>
           </div>
-          <p class="sc-desc">Timed MCQs with tab-switch tracking and auto-submit. Full analytics from minute one.</p>
-          <div class="sc-tag"><span class="sc-dot"></span>Violation tracking</div>
+          <p class="sc-desc " style="margin-bottom: 0.3rem;">Live dashboards and analytics that help leaders make faster, better decisions.</p>
+          <div class="sc-tag"><span class="sc-dot"></span>Actionable insights</div>
         </div>
 
         <div class="sc">
           <div class="sc-row">
             <div class="sc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></div>
-            <span class="sc-title">Smart Notifications</span>
+            <span class="sc-title">Compliance & Documentation</span>
           </div>
-          <p class="sc-desc">Real-time SSE + email — role-targeted alerts so every stakeholder gets exactly what they need.</p>
-          <div class="sc-tag"><span class="sc-dot"></span>Role-targeted</div>
+          <p class="sc-desc" style="margin-bottom: 0.3rem;">Keep documents, approvals, policies, and regulatory records organized and audit-ready.</p>
+          <div class="sc-tag"><span class="sc-dot" ></span>Audit ready</div>
         </div>
       </div>
 
@@ -489,13 +553,21 @@
   </div>
 </section>
 
+
+
+<!-- ######################################## -->
+
+
 <!-- FEATURES -->
+
+
+
 <section class="feat-sec" id="featuresSec">
   <div class="feat-inner">
     <div class="feat-hd" id="featHd">
       <div class="feat-ey">Why Aksharum</div>
-      <h2>Everything your school <em>needs in one place</em></h2>
-      <p>Built for the modern Indian school — multi-tenant, modular, and scalable. Every feature works together seamlessly.</p>
+      <h2>Run your entire school from  <em>One Intelligent platform.</em></h2>
+      <p>Every feature exists to eliminate manual work, connect every stakeholder, and help schools operate with confidence.</p>
     </div>
     <div class="feat-grid-6">
 
@@ -503,48 +575,48 @@
         <div class="fg-ico">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </div>
-        <h3>Multi-Tenant Architecture</h3>
-        <p>Each school runs in its own completely isolated environment. Your data, users, and settings are private — no other institution on the platform can ever access them.</p>
+        <h3>One Platform. Every Department.</h3>
+        <p>Teachers, parents, students, administrators, accountants, and management—everyone works on one connected platform.</p>
       </div>
 
       <div class="fg-card" id="fg2">
         <div class="fg-ico">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <h3>Role-Based Access Control</h3>
-        <p>Five distinct roles — Super Admin, School Admin, Teacher, Student, Parent. Each sees exactly their world, enforced at the server level on every single route and API call.</p>
+        <h3>Enterprise-grade Security</h3>
+        <p>Role-based access, encrypted data, automatic backups, isolated school environments, and secure cloud infrastructure.</p>
       </div>
 
       <div class="fg-card" id="fg3">
         <div class="fg-ico">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
         </div>
-        <h3>Modular Feature Gating</h3>
-        <p>Enable exactly what you need from 13 available modules — Attendance, Results, Exams, Fees, Leaves and more. Toggle on or off anytime with zero downtime. Pay only for what you use.</p>
+        <h3>Grows With Your School</h3>
+        <p>From a single campus to multiple branches—scale without changing your software.</p>
       </div>
 
       <div class="fg-card" id="fg4">
         <div class="fg-ico">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
         </div>
-        <h3>Real-Time Notifications</h3>
-        <p>SSE-powered live alerts and email notifications delivered the moment something changes — results published, fees due, leaves approved, attendance flagged. Every role gets only what they need.</p>
+        <h3>Communication That Works</h3>
+        <p>Announcements, approvals, reminders, payments, and updates delivered instantly via email or in-app alerts.</p>
       </div>
 
       <div class="fg-card" id="fg5">
         <div class="fg-ico">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
         </div>
-        <h3>One-Click PDF &amp; XLSX Reports</h3>
-        <p>Generate professional mark sheets, attendance reports, fee receipts, and salary slips in one click. Print-ready PDF or data-ready XLSX — exported instantly without leaving the platform.</p>
+        <h3>Reports & Compliance</h3>
+        <p>Generate audit-ready reports, export documents, and stay prepared for inspections without digging through paperwork.</p>
       </div>
 
       <div class="fg-card" id="fg6">
         <div class="fg-ico">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
         </div>
-        <h3>Secure Online Exams</h3>
-        <p>Timed MCQ exams with real-time violation tracking — tab switches, focus loss, and copy attempts logged server-side. Auto-submit on timeout. Full performance analytics from the moment the exam ends.</p>
+        <h3>Staff & HR Operations</h3>
+        <p>Leave management, payroll, permissions, performance, and staff records—without separate HR software.</p>
       </div>
 
     </div>
@@ -564,6 +636,10 @@
 </section>
 
 
+
+
+
+<!-- ########################################################################################## -->
 <!-- ══ TAILORED ══ -->
 <section class="tailored-sec" id="tailoredSec">
 
@@ -571,7 +647,7 @@
   <div class="tailored-hd" id="tailoredHd">
     <div class="tailored-ey">Tailored for Everyone</div>
     <h2>Built for <em>every role</em><br>in your school</h2>
-    <p>Every person in your school sees a world built specifically for them — their data, their tasks, their view. Nothing more, nothing less.</p>
+    <p>Everyone sees exactly what they need—while your entire school operates from one connected system.</p>
   </div>
 
   <div class="tailored-body">
@@ -594,10 +670,26 @@
           </svg>
         </div>
         <div class="t-body">
-          <div class="t-label">Full Access</div>
+          <div class="t-label">Complete institutional control</div>
           <div class="t-name">School Admin</div>
-          <div class="t-desc">Full control over students, staff, modules, fees, and reports. The command centre for everything.</div></div>
+          <div class="t-desc">Runs the entire institution from one dashboard—with complete visibility.</div></div>
       </div>
+
+
+      <!-- Principal -->
+      <div class="t-role" id="tr0">
+        <div class="t-dot">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/>
+            <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
+          </svg>
+        </div>
+        <div class="t-body">
+          <div class="t-label">School-wide Insights</div>
+          <div class="t-name">Principal</div>
+          <div class="t-desc">Track performance, operations, and growth in real time.</div></div>
+      </div>
+
 
       <!-- Teacher -->
       <div class="t-role" id="tr1">
@@ -608,9 +700,11 @@
           </svg>
         </div>
         <div class="t-body">
-          <div class="t-label">Classroom Control</div>
+          <div class="t-label">Focus on teaching</div>
           <div class="t-name">Teacher</div>
-          <div class="t-desc">Marks attendance, enters results, creates exams, uploads documents and manages leaves — all from one dashboard.</div></div>
+          <div class="t-desc">
+                Lesson planning, grading, assessments, and classroom operations—all in one place.
+          </div></div>
       </div>
 
       <!-- Student -->
@@ -624,7 +718,7 @@
         <div class="t-body">
           <div class="t-label">Personal Dashboard</div>
           <div class="t-name">Student</div>
-          <div class="t-desc">Views attendance, results, and timetable. Sits live exams and gets notified the moment anything changes.</div></div>
+          <div class="t-desc">Everything for success: assignments, exams, schedules, progress, achievements</div></div>
       </div>
 
       <!-- Parent -->
@@ -638,14 +732,39 @@
           </svg>
         </div>
         <div class="t-body">
-          <div class="t-label">Child's World</div>
+          <div class="t-label">Always informed</div>
           <div class="t-name">Parent</div>
-          <div class="t-desc">Tracks their child's attendance, results, and fee dues in real time — no more calling the school.</div></div>
+          <div class="t-desc">Always connected to their child's education without calls or paperwork.</div></div>
+      </div>
+
+
+      <!-- Accountant -->
+      <div class="t-role" id="tr3">
+        <div class="t-dot">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+            <path d="M16 3.13a4 4 0 010 7.75"/>
+          </svg>
+        </div>
+        <div class="t-body">
+          <div class="t-label">Financial clarity</div>
+          <div class="t-name">Accountant</div>
+          <div class="t-desc">Fees, payroll, reconciliation, and reporting made effortless.</div></div>
       </div>
 
     </div>
   </div>
 </section>
+
+
+
+
+
+
+
+<!-- ###################################################################################### -->
 
 <!-- ══ TRUST PILLARS ══ -->
 <section class="trust-sec" id="trustSec">
@@ -656,7 +775,7 @@
     <div class="trust-hd" id="trustHd">
       <div class="trust-ey">Built to Last</div>
       <h2>Secure. Reliable. <em>Trustworthy.</em></h2>
-      <p>Aksharum is built on principles that matter — not just features. Safety, stability, and inclusivity are non-negotiable.</p>
+      <p>Built on enterprise-grade architecture that keeps your data secure, your operations uninterrupted, and your institution ready to grow.</p>
     </div>
 
     <div class="trust-grid">
@@ -672,10 +791,11 @@
           </svg>
         </div>
         <h3>Enterprise-Grade Security</h3>
-        <p>Every route is protected with server-side role validation. Data is tenant-isolated — no school can ever access another's records. Encrypted payloads and audit-ready architecture, built in from day one.</p>
+        <p>Every login, request, and record is protected with encrypted communication, role-based permissions, and isolated school environments.
+        </p>
         <div class="tcard-stat">
           <span class="tcard-stat-num">0</span>
-          <span class="tcard-stat-lbl">Cross-tenant data<br>leaks ever possible</span>
+          <span class="tcard-stat-lbl">Cross-school data <br>exposure</span>
         </div>
       </div>
 
@@ -689,7 +809,9 @@
           </svg>
         </div>
         <h3>Always-On Reliability</h3>
-        <p>Built on Node.js with Express 5 and MongoDB — a stack proven at scale. Modules toggle with zero downtime. No maintenance windows. No disruptions to your school day, ever.</p>
+        <p>Cloud infrastructure built for uninterrupted operations, automatic backups, and seamless updates—so your school never has to stop.
+
+        </p>
         <div class="tcard-stat">
           <span class="tcard-stat-num" id="uptimeStat">99%</span>
           <span class="tcard-stat-lbl">Uptime guarantee<br>across all tenants</span>
@@ -707,11 +829,12 @@
             <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
           </svg>
         </div>
-        <h3>Designed for Every School</h3>
-        <p>From 50-student rural institutions to 5,000-student urban schools. No minimum seat count, no assumptions about size. Aksharum adapts to your scale — not the other way around.</p>
+        <h3>Future-Ready Platform</h3>
+        <p>Continuous improvements, modular architecture, and seamless feature updates ensure your school always stays ahead—without costly migrations or downtime.
+        </p>
         <div class="tcard-stat">
-          <span class="tcard-stat-num">Any</span>
-          <span class="tcard-stat-lbl">School size, any city,<br>across India</span>
+          <span class="tcard-stat-num">Always</span>
+          <span class="tcard-stat-lbl"> evolving. Never outdated.</span>
         </div>
       </div>
 
@@ -719,7 +842,14 @@
   </div>
 </section>
 
-<!-- STATS -->
+
+
+
+
+
+<!-- ############################################################################################## -->
+
+<!-- STATS
 <section class="stats-strip">
   <div class="stats-inner">
     <div class="stat-item sr"><div class="snum" data-target="500">0<sup>+</sup></div><p>Schools Onboarded</p></div>
@@ -727,9 +857,11 @@
     <div class="stat-item sr sd2"><div class="snum" data-target="13">0</div><p>Integrated Modules</p></div>
     <div class="stat-item sr sd3"><div class="snum" data-target="99">0<sup>%</sup></div><p>Uptime Guarantee</p></div>
   </div>
-</section>
+</section> -->
 
 <!-- ══ TESTIMONIALS ══ -->
+
+<!-- 
 <section class="testi-sec" id="testiSec">
   <div class="testi-inner">
 
@@ -800,7 +932,7 @@
 
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- FOOTER -->
 <footer>

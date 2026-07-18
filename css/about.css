@@ -8,6 +8,10 @@
   --sh:0 2px 12px rgba(93,63,184,.08);
   --sh-md:0 8px 32px rgba(93,63,184,.12);
   --sh-lg:0 24px 64px rgba(93,63,184,.15);
+
+    --nav-bg-start: #FFFFFF;
+  --nav-bg-middle: #EDE9FE;
+  --nav-bg-end: #e2d9ff;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -66,7 +70,7 @@ nav.scrolled{border-color:var(--line);box-shadow:0 2px 20px rgba(93,63,184,.07)}
 .wwa-sec{background:#fff;padding:32px 0 108px;position:relative;overflow:hidden}
 .wwa-sec::before{content:'';position:absolute;top:-80px;right:-80px;width:440px;height:440px;background:radial-gradient(circle,rgba(184,164,240,.07),transparent 65%);pointer-events:none}
 
-.wwa-hd{text-align:center;max-width:680px;margin:0 auto 68px;padding:0 52px}
+.wwa-hd{text-align:center;max-width:680px;margin:0 auto 38px;padding:0 52px}
 .wwa-ey{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.13em;color:var(--p600);margin-bottom:14px}
 .wwa-ey::before,.wwa-ey::after{content:'';width:20px;height:2px;background:var(--p400);border-radius:2px}
 /* — heading wraps on two lines as user requested — no nowrap — */
@@ -674,7 +678,7 @@ body.nav-lock .mobile-drawer {
   }
 
   .nw { gap: 12px; }
-  .nlinks a { padding: 7px 10px; font-size: 13.5px; }
+  .nlinks a { padding: 7px 10px; font-size: 16.5px; }
   .n-demo { padding: 9px 16px; font-size: 13.5px; }
 
   .about-hero { padding: 48px 0 110px; }
@@ -1365,6 +1369,15 @@ html[data-theme="dark"] {
   --sh-lg: 0 24px 64px rgba(0, 0, 0, .35);
 
   color-scheme: dark;
+}
+
+[data-theme="dark"] {
+  /* Dark mode: transitions from dark background down into your hero section */
+  --nav-bg-start: #0F0E17;
+  --nav-bg-middle: #1B1834;
+  --nav-bg-end: #2a1d58;
+  
+  --nav-text-color: #F0F0F0;
 }
 
 html[data-theme="dark"] body {
