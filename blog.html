@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Aksharum</title>
+<meta name="description" content="School news, academic insights, student achievements, events, and resources for parents — from the Aksharum school community.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/blog.css">
+<link rel="stylesheet" href="css/liquid-glass.css">
+<script src="js/page-transitions.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  (function () {
+    const savedTheme = localStorage.getItem("aksharum-theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+      document.documentElement.setAttribute("data-theme", "light");
+    }
+  })();
+</script>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="nav" style="background: linear-gradient(
+    180deg,
+    var(--nav-bg-start) 0%,
+    var(--nav-bg-middle) 50%,
+    var(--nav-bg-end) 100%
+  );">
+  <div class="nw">
+    <a href="index.html" class="logo">
+      <div class="lbox">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+          <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+        </svg>
+      </div>
+      <span class="logo-accent">Aksharum</span>
+    </a>
+
+    <!-- desktop links -->
+    <ul class="nlinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <!-- desktop CTA -->
+    <div class="nright">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode">
+        <svg class="theme-icon theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2"></path>
+          <path d="M12 20v2"></path>
+          <path d="M4.93 4.93l1.41 1.41"></path>
+          <path d="M17.66 17.66l1.41 1.41"></path>
+          <path d="M2 12h2"></path>
+          <path d="M20 12h2"></path>
+          <path d="M6.34 17.66l-1.41 1.41"></path>
+          <path d="M19.07 4.93l-1.41 1.41"></path>
+        </svg>
+        <svg class="theme-icon theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3a6.5 6.5 0 0 0 8.8 8.8A9 9 0 1 1 12 3Z"></path>
+        </svg>
+      </button>
+
+      <a href="demo.html" class="n-demo">Book Demo</a>
+    </div>
+
+    <!-- hamburger -->
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- overlay -->
+<div class="nav-overlay" id="navOverlay"></div>
+
+<!-- mobile drawer -->
+<aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+  <div class="drawer-head">
+    <a href="index.html" class="drawer-logo">
+      <div class="lbox">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+          <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+        </svg>
+      </div>
+      <span>Aksharum</span>
+    </a>
+    <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="drawer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="features.html">Features</a>
+    <a href="blog.html" class="active">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="drawer-bottom">
+    <button class="drawer-theme-toggle" id="drawerThemeToggle" type="button" aria-label="Switch to dark mode">
+      <span class="drawer-theme-icon">
+        <svg class="theme-icon theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2"></path>
+          <path d="M12 20v2"></path>
+          <path d="M4.93 4.93l1.41 1.41"></path>
+          <path d="M17.66 17.66l1.41 1.41"></path>
+          <path d="M2 12h2"></path>
+          <path d="M20 12h2"></path>
+          <path d="M6.34 17.66l-1.41 1.41"></path>
+          <path d="M19.07 4.93l-1.41 1.41"></path>
+        </svg>
+        <svg class="theme-icon theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3a6.5 6.5 0 0 0 8.8 8.8A9 9 0 1 1 12 3Z"></path>
+        </svg>
+      </span>
+      <span class="drawer-theme-text">Dark Mode</span>
+    </button>
+    <a href="demo.html" class="drawer-demo">Book Demo</a>
+  </div>
+</aside>
+
+<!-- ══════════════════════ BLOG HERO ══════════════════════ -->
+<section class="blog-hero" id="blogHero">
+  <div class="bh-glow1"></div>
+  <div class="bh-glow2"></div>
+  <div class="bh-inner">
+    <div class="bh-ey" id="bhEy">School Blog</div>
+    <h1 id="bhTitle">Stories, Updates &amp; Ideas <em>From Our School Community</em></h1>
+    <p class="bh-sub" id="bhSub">
+      Discover school news, academic insights, student achievements, campus events, and practical
+      resources for parents and students — all in one place.
+    </p>
+
+    <form class="bh-search" id="bhSearchForm" role="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bh-search-ico"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="blogSearch" placeholder="Search articles..." aria-label="Search articles" autocomplete="off">
+      <button type="submit" class="bh-search-btn">Search</button>
+    </form>
+
+    <div class="bh-tags">
+      <span>Popular:</span>
+      <a href="#latestSec" data-quick="study habits">Study Habits</a>
+      <a href="#latestSec" data-quick="science exhibition">Science Exhibition</a>
+      <a href="#latestSec" data-quick="cultural fest">Cultural Fest</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ FEATURED STORY ══════════════════════ -->
+<section class="feat-story-sec" id="featStorySec">
+  <div class="fs-inner">
+    <div class="fs-label" id="fsLabel">Featured Story</div>
+
+    <div class="fs-card" id="fsCard">
+      <div class="fs-media thumb-grad-news">
+        <div class="thumb-blob b1"></div>
+        <div class="thumb-blob b2"></div>
+        <svg class="thumb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 21h8"/><path d="M12 17v4"/>
+          <path d="M6 3h12a1 1 0 011 1v6a7 7 0 01-14 0V4a1 1 0 011-1z"/>
+          <path d="M6 6H4a2 2 0 000 4h2"/><path d="M18 6h2a2 2 0 010 4h-2"/>
+        </svg>
+        <span class="fs-media-badge">Featured</span>
+      </div>
+
+      <div class="fs-body">
+        <span class="cat-badge cat-news">School News</span>
+        <h2 class="fs-title">Celebrating Excellence: Highlights From Our Annual School Awards</h2>
+        <p class="fs-desc">
+          From academic toppers to sports champions, this year's Annual Awards Day brought our
+          entire school community together to celebrate achievement, hard work, and character —
+          a night that reminded us why we do what we do.
+        </p>
+
+        <div class="fs-meta">
+          <div class="ba-avatar" style="background:linear-gradient(135deg,#7c5fd6,#5d3fb8)">AV</div>
+          <div class="fs-meta-info">
+            <span class="fs-author">Ananya Verma</span>
+            <span class="fs-meta-sub">
+              <span>July 18, 2026</span>
+              <span class="dot">&bull;</span>
+              <span>6 min read</span>
+            </span>
+          </div>
+        </div>
+
+        <a href="blog-detail.html" class="fs-cta">
+          Read Article
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ CATEGORY CHIPS ══════════════════════ -->
+<section class="cat-sec" id="catSec">
+  <div class="cat-inner">
+    <div class="cat-scroll" id="catScroll">
+      <button class="cat-chip active" data-cat="all">All</button>
+      <button class="cat-chip" data-cat="news">School News</button>
+      <button class="cat-chip" data-cat="academics">Academics</button>
+      <button class="cat-chip" data-cat="life">Student Life</button>
+      <button class="cat-chip" data-cat="achievements">Achievements</button>
+      <button class="cat-chip" data-cat="events">Events</button>
+      <button class="cat-chip" data-cat="parents">Parent Resources</button>
+      <button class="cat-chip" data-cat="tips">Education Tips</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ LATEST STORIES ══════════════════════ -->
+<section class="latest-sec" id="latestSec">
+  <div class="latest-inner">
+    <div class="latest-hd" id="latestHd">
+      <div>
+        <div class="latest-ey">Fresh From The Newsroom</div>
+        <h2>Latest <em>Stories</em></h2>
+      </div>
+      <p>Curated updates from classrooms, courts, stages, and everywhere in between.</p>
+    </div>
+
+    <div class="blog-grid" id="blogGrid">
+
+      <!-- 1 -->
+      <article class="blog-card" data-cat="tips" data-title="10 effective study habits every student should know" data-excerpt="small consistent habits evidence backed strategies teachers recommend">
+        <a href="blog-detail.html" class="bc-media thumb-grad-tips">
+          <div class="thumb-blob b1"></div><div class="thumb-blob b2"></div>
+          <svg class="thumb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+        </a>
+        <div class="bc-body">
+          <span class="cat-badge cat-tips">Education Tips</span>
+          <h3><a href="blog-detail.html">10 Effective Study Habits Every Student Should Know</a></h3>
+          <p>Small, consistent habits make the biggest difference in academic performance. Here are ten evidence-backed strategies our teachers recommend to every student.</p>
+          <div class="bc-meta">
+            <div class="ba-avatar sm" style="background:linear-gradient(135deg,#60a5fa,#2563eb)">KM</div>
+            <div class="bc-meta-info">
+              <span class="bc-author">Karan Mehta</span>
+              <span class="bc-meta-sub"><span>Jul 20, 2026</span><span class="dot">&bull;</span><span>5 min read</span></span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="blog-card" data-cat="academics" data-title="inside our annual science exhibition" data-excerpt="student projects grade levels curiosity science exhibition">
+        <a href="blog-detail.html" class="bc-media thumb-grad-academics">
+          <div class="thumb-blob b1"></div><div class="thumb-blob b2"></div>
+          <svg class="thumb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v6.5L4.5 19a1.6 1.6 0 001.4 2.4h12.2a1.6 1.6 0 001.4-2.4L14 9.5V3"/><path d="M7.5 15h9"/></svg>
+        </a>
+        <div class="bc-body">
+          <span class="cat-badge cat-academics">Academics</span>
+          <h3><a href="blog-detail.html">Inside Our Annual Science Exhibition</a></h3>
+          <p>Over 120 student projects, three grade levels, and one unforgettable afternoon of curiosity. Take a look inside this year's Science Exhibition.</p>
+          <div class="bc-meta">
+            <div class="ba-avatar sm" style="background:linear-gradient(135deg,#5eead4,#0d9488)">PN</div>
+            <div class="bc-meta-info">
+              <span class="bc-author">Priya Nair</span>
+              <span class="bc-meta-sub"><span>Jul 15, 2026</span><span class="dot">&bull;</span><span>4 min read</span></span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="blog-card" data-cat="achievements" data-title="students bring home gold at inter school competition" data-excerpt="athletics team gold medals inter school championship team spirit">
+        <a href="blog-detail.html" class="bc-media thumb-grad-achieve">
+          <div class="thumb-blob b1"></div><div class="thumb-blob b2"></div>
+          <svg class="thumb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M6 3h12a1 1 0 011 1v6a7 7 0 01-14 0V4a1 1 0 011-1z"/><path d="M6 6H4a2 2 0 000 4h2"/><path d="M18 6h2a2 2 0 010 4h-2"/></svg>
+        </a>
+        <div class="bc-body">
+          <span class="cat-badge cat-achievements">Achievements</span>
+          <h3><a href="blog-detail.html">Students Bring Home Gold at Inter-School Competition</a></h3>
+          <p>Our athletics team claimed five gold medals at this year's Inter-School Championship, capping off months of early morning practice and team spirit.</p>
+          <div class="bc-meta">
+            <div class="ba-avatar sm" style="background:linear-gradient(135deg,#fbbf24,#d97706)">AR</div>
+            <div class="bc-meta-info">
+              <span class="bc-author">Coach Arjun Rao</span>
+              <span class="bc-meta-sub"><span>Jul 12, 2026</span><span class="dot">&bull;</span><span>3 min read</span></span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4 -->
+      <article class="blog-card" data-cat="parents" data-title="how parents can support learning at home" data-excerpt="learning routines families reinforce classroom parent resources">
+        <a href="blog-detail.html" class="bc-media thumb-grad-parents">
+          <div class="thumb-blob b1"></div><div class="thumb-blob b2"></div>
+          <svg class="thumb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 21v-6h6v6"/></svg>
+        </a>
+        <div class="bc-body">
+          <span class="cat-badge cat-parents">Parent Resources</span>
+          <h3><a href="blog-detail.html">How Parents Can Support Learning at Home</a></h3>
+          <p>Learning doesn't stop at the school gate. Here's how families can build simple routines that reinforce what happens in the classroom.</p>
+          <div class="bc-meta">
+            <div class="ba-avatar sm" style="background:linear-gradient(135deg,#4ade80,#16a34a)">SR</div>
+            <div class="bc-meta-info">
+              <span class="bc-author">Dr. Sunita Rao</span>
+              <span class="bc-meta-sub"><span>Jul 9, 2026</span><span class="dot">&bull;</span><span>7 min read</span></span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5 -->
+      <article class="blog-card" data-cat="events" data-title="a look back at our cultural fest" data-excerpt="dance drama music art students showcased rehearsal creativity">
+        <a href="blog-detail.html" class="bc-media thumb-grad-events">
+          <div class="thumb-blob b1"></div><div class="thumb-blob b2"></div>
+          <svg class="thumb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        </a>
+        <div class="bc-body">
+          <span class="cat-badge cat-events">Events</span>
+          <h3><a href="blog-detail.html">A Look Back at Our Cultural Fest</a></h3>
+          <p>Dance, drama, music, and art came together for two vibrant days as students showcased months of rehearsal and creativity at this year's Cultural Fest.</p>
+          <div class="bc-meta">
+            <div class="ba-avatar sm" style="background:linear-gradient(135deg,#f9a8d4,#db2777)">FS</div>
+            <div class="bc-meta-info">
+              <span class="bc-author">Fatima Sheikh</span>
+              <span class="bc-meta-sub"><span>Jul 5, 2026</span><span class="dot">&bull;</span><span>5 min read</span></span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6 -->
+      <article class="blog-card" data-cat="tips" data-title="preparing students for the future of technology" data-excerpt="coding clubs robotics labs digital literacy future ready skills">
+        <a href="blog-detail.html" class="bc-media thumb-grad-tech">
+          <div class="thumb-blob b1"></div><div class="thumb-blob b2"></div>
+          <svg class="thumb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 21h8"/><path d="M12 16v5"/></svg>
+        </a>
+        <div class="bc-body">
+          <span class="cat-badge cat-tips">Education Tips</span>
+          <h3><a href="blog-detail.html">Preparing Students for the Future of Technology</a></h3>
+          <p>From coding clubs to robotics labs, here's how we're building digital literacy and future-ready skills into everyday learning.</p>
+          <div class="bc-meta">
+            <div class="ba-avatar sm" style="background:linear-gradient(135deg,#93c5fd,#2563eb)">RD</div>
+            <div class="bc-meta-info">
+              <span class="bc-author">Rohan Das</span>
+              <span class="bc-meta-sub"><span>Jul 1, 2026</span><span class="dot">&bull;</span><span>6 min read</span></span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7 (extra / load more) -->
+      <article class="blog-card pg-extra" data-cat="news" data-title="welcoming our new academic session a message from the principal" data-excerpt="principal message new academic session school news">
+        <a href="blog-detail.html" class="bc-media thumb-grad-news">
+          <div class="thumb-blob b1"></div><div class="thumb-blob b2"></div>
+          <svg class="thumb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M7 14v5a2 2 0 002 2h1v-6.5"/></svg>
+        </a>
+        <div class="bc-body">
+          <span class="cat-badge cat-news">School News</span>
+          <h3><a href="blog-detail.html">Welcoming Our New Academic Session: A Message From the Principal</a></h3>
+          <p>As we begin a new academic year, our Principal reflects on last year's milestones and shares a vision for what's ahead for students and staff alike.</p>
+          <div class="bc-meta">
+            <div class="ba-avatar sm" style="background:linear-gradient(135deg,#c4b5fd,#7c5fd6)">SM</div>
+            <div class="bc-meta-info">
+              <span class="bc-author">Dr. Sarah Mathew</span>
+              <span class="bc-meta-sub"><span>Jun 28, 2026</span><span class="dot">&bull;</span><span>4 min read</span></span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 8 (extra / load more) -->
+      <article class="blog-card pg-extra" data-cat="life" data-title="meet the teachers spotlight on our junior wing faculty" data-excerpt="teacher spotlight junior wing faculty student life">
+        <a href="blog-detail.html" class="bc-media thumb-grad-life">
+          <div class="thumb-blob b1"></div><div class="thumb-blob b2"></div>
+          <svg class="thumb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </a>
+        <div class="bc-body">
+          <span class="cat-badge cat-life">Student Life</span>
+          <h3><a href="blog-detail.html">Meet the Teachers: Spotlight on Our Junior Wing Faculty</a></h3>
+          <p>The educators shaping our youngest learners share what they love about teaching, and the small moments that keep them inspired every day.</p>
+          <div class="bc-meta">
+            <div class="ba-avatar sm" style="background:linear-gradient(135deg,#fca5a5,#dc2626)">NT</div>
+            <div class="bc-meta-info">
+              <span class="bc-author">Neha Thomas</span>
+              <span class="bc-meta-sub"><span>Jun 24, 2026</span><span class="dot">&bull;</span><span>5 min read</span></span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 9 (extra / load more) -->
+      <article class="blog-card pg-extra" data-cat="parents" data-title="exam season survival guide for parents and students" data-excerpt="exam season survival guide parents students stress routines">
+        <a href="blog-detail.html" class="bc-media thumb-grad-parents">
+          <div class="thumb-blob b1"></div><div class="thumb-blob b2"></div>
+          <svg class="thumb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        </a>
+        <div class="bc-body">
+          <span class="cat-badge cat-parents">Parent Resources</span>
+          <h3><a href="blog-detail.html">Exam Season Survival Guide for Parents and Students</a></h3>
+          <p>Practical, low-stress routines to help households navigate exam weeks — from revision timetables to keeping calm at home.</p>
+          <div class="bc-meta">
+            <div class="ba-avatar sm" style="background:linear-gradient(135deg,#86efac,#15803d)">VJ</div>
+            <div class="bc-meta-info">
+              <span class="bc-author">Vikram Joshi</span>
+              <span class="bc-meta-sub"><span>Jun 20, 2026</span><span class="dot">&bull;</span><span>6 min read</span></span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- empty state -->
+    <div class="blog-empty" id="blogEmpty" hidden>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <h3>No articles found</h3>
+      <p>Try a different search term or category — or reset your filters to see everything.</p>
+      <button class="blog-reset-btn" id="blogResetBtn">Reset Filters</button>
+    </div>
+
+    <!-- load more -->
+    <div class="load-more-wrap" id="loadMoreWrap">
+      <button class="load-more-btn" id="loadMoreBtn">
+        Load More Stories
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ POPULAR THIS WEEK ══════════════════════ -->
+<section class="popular-sec" id="popularSec">
+  <div class="popular-inner">
+    <div class="popular-hd" id="popularHd">
+      <div class="popular-ey">Trending Now</div>
+      <h2>Popular <em>This Week</em></h2>
+      <p>The stories our school community can't stop reading right now.</p>
+    </div>
+
+    <div class="popular-grid">
+
+      <!-- large trending -->
+      <a href="blog-detail.html" class="pop-lead">
+        <div class="pop-lead-media thumb-grad-tips">
+          <div class="thumb-blob b1"></div><div class="thumb-blob b2"></div>
+          <span class="pop-num">01</span>
+          <svg class="thumb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+        </div>
+        <div class="pop-lead-body">
+          <span class="cat-badge cat-tips">Education Tips</span>
+          <h3>10 Effective Study Habits Every Student Should Know</h3>
+          <p>Small, consistent habits make the biggest difference in academic performance — see why this guide is our most-read piece this week.</p>
+          <span class="pop-lead-meta">5 min read <span class="dot">&bull;</span> 2.1k reads</span>
+        </div>
+      </a>
+
+      <!-- smaller list -->
+      <div class="pop-list">
+        <a href="blog-detail.html" class="pop-item">
+          <span class="pop-num sm">02</span>
+          <div class="pop-item-body">
+            <span class="cat-badge cat-tips sm">Education Tips</span>
+            <h4>Preparing Students for the Future of Technology</h4>
+            <span class="pop-item-meta">6 min read</span>
+          </div>
+        </a>
+        <a href="blog-detail.html" class="pop-item">
+          <span class="pop-num sm">03</span>
+          <div class="pop-item-body">
+            <span class="cat-badge cat-achievements sm">Achievements</span>
+            <h4>Students Bring Home Gold at Inter-School Competition</h4>
+            <span class="pop-item-meta">3 min read</span>
+          </div>
+        </a>
+        <a href="blog-detail.html" class="pop-item">
+          <span class="pop-num sm">04</span>
+          <div class="pop-item-body">
+            <span class="cat-badge cat-parents sm">Parent Resources</span>
+            <h4>How Parents Can Support Learning at Home</h4>
+            <span class="pop-item-meta">7 min read</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ NEWSLETTER ══════════════════════ -->
+<section class="news-sec" id="newsSec">
+  <div class="news-noise"></div>
+  <div class="news-glow1"></div>
+  <div class="news-glow2"></div>
+  <div class="news-inner">
+    <div class="news-ico">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    </div>
+    <h2>Stay Connected With Our <em>School Community</em></h2>
+    <p>Get the latest school news, events, and parent resources delivered straight to your inbox — no spam, just what matters.</p>
+
+    <form class="news-form" id="newsForm">
+      <input type="email" placeholder="Enter your email address" aria-label="Email address" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <span class="news-note" id="newsNote">Join 2,400+ parents and students already subscribed.</span>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fw">
+    <div class="f-top"><div class="f-brand-name"><span>Aksharum</span></div><div class="f-tagline">The modern operating system for educational institutions — built for schools of every size.</div></div>
+    <div class="fgrid">
+      <div class="fcol"><h4>Platform</h4><ul><li><a href="features.html">Features</a></li><li><a href="services.html">Services</a></li><li><a href="demo.html">Book a Demo</a></li></ul></div>
+      <div class="fcol"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="career.html">Careers</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+      <div class="fcol"><h4>Social Media</h4><ul>
+        <li><a href="mailto:admin@aksharum.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>hello@school2.app</a></li>
+        <li><a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Instagram</a></li>
+        <li><a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a></li>
+        <li><a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X (Twitter)</a></li>
+      </ul></div>
+      <div class="fcol"><h4>Legal</h4><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms&conditions.html">Terms &amp; Conditions</a></li><li><a href="terms.html">Terms of Use</a></li></ul></div>
+    </div>
+    <div class="fbot">© 2026 Aksharum. Built in India for Modern Education.</div>
+  </div>
+</footer>
+
+<script src="js/blog.js"></script>
+</body>
+</html>
